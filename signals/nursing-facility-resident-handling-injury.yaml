@@ -1,0 +1,81 @@
+problem: Resident-handling injury among nursing-facility caregivers
+scope: US nursing care facilities (NAICS 6231)
+description: >-
+  Work-related injuries sustained while a caregiver lifts, transfers,
+  repositions, boosts, or turns a resident. OSHA does not code injuries by
+  task; handling is identified from the employer-written narrative.
+
+signals:
+  osha_records:
+    - id: ITA_CASE_DETAIL
+      title: Injury Tracking Application case detail data
+      publisher: OSHA
+      unit: one row per recordable case (OSHA Form 300A/301)
+      fields_used:
+        - naics_code
+        - job_description
+        - SOC_Description
+        - incident_outcome
+        - dafw_num_away
+        - djtr_num_tr
+        - time_started_work
+        - time_of_incident
+        - New_nar_before_incident
+        - New_nar_what_happened
+        - New_nar_injury_illness
+        - New_nar_object_substance
+      task_coded_by_publisher: false
+
+classification:
+  rule: >-
+    Narrative names a person being cared for (resident, patient) and a
+    movement of that person (transfer, lift, reposition, boost, turn, roll,
+    pivot, mechanical lift, gait belt, sit-to-stand, slide or draw sheet,
+    and related terms), or uses a phrase such as "patient handling".
+  rule_file: nursing-facility-handling/derived/classification-rule.txt
+  validation:
+    sample: 200 nursing-facility cases, drawn at random, labeled by hand
+    labels_file: nursing-facility-handling/derived/validation-labeled.csv
+    strict_rule: {precision: 0.846, recall: 0.717}
+    broad_rule: {precision: 0.698, recall: 0.804}
+    labeled_share_handling: {value: 0.230, ci95: [0.177, 0.293]}
+
+distribution_2025:
+  source: ITA Case Detail Data, 2025, submissions through 2026-03-15
+  cases_all_industries: 697201
+  cases_naics_6231: 24292
+  handling_cases_strict: 5280
+  handling_share_strict: 0.217
+  handling_cases_broad: 7112
+  nursing_assistant_share: 0.813
+  days_away_sum: 54326
+  days_restricted_sum: 117031
+  restricted_to_away_ratio: 2.15
+  cases_zero_days_away: 3360
+  cases_over_90_days_away: 199
+  longest_absence_days: 348
+  back_or_lumbar_named: 1901
+
+did_not_hold:
+  - hypothesis: Handling injuries accumulate as a shift goes on
+    result: >-
+      Share by hour into shift is flat through roughly the first six hours;
+      the later decline reflects shifts ending.
+  - hypothesis: Night-shift handling injuries are more severe
+    result: >-
+      Mean days away 32.1 (night, 284 cases) vs 27.4 (day, 1,428 cases);
+      medians 7.5 vs 6.0. Small difference, small night sample. No claim made.
+  - hypothesis: Facilities with higher pressure-ulcer rates have higher injury rates
+    result: >-
+      Pearson r = -0.001, Spearman rho = 0.024 (DART rate vs CMS long-stay
+      pressure-ulcer rate, n = 7,370 facilities linked via crosswalk/,
+      tiers A and B). Linkage code published in crosswalk/.
+
+limitations:
+  - ITA submission applies only to establishments above OSHA size and industry thresholds.
+  - Narratives are employer-written free text; detail and wording vary.
+  - Handling is a keyword classification, not an OSHA field.
+  - Open cases undercount final days away.
+  - No establishment is named. A recorded injury does not establish fault.
+
+retrieved: 2026-09-20
