@@ -1,0 +1,9 @@
+PERSON     = \b(?:resident|residents|patient|patients|pt|res)\b
+MOVEMENT   = \b(?:transfer\w*|lift\w*|reposition\w*|boost\w*|turn\w*|roll\w*|pull\w* (?:up|over)|pivot\w*|hoyer|mechanical lift|gait belt|sit[- ]to[- ]stand|slide sheet|draw sheet|bed to chair|chair to bed|wheelchair to bed|bed to wheelchair|toilet\w* transfer|ambulat\w*)\b
+PHRASE     = patient handling|resident handling|resident care transfer
+MOVE_BROAD = \b(?:mov(?:e|ed|es|ing)|catch\w*|caught|lower(?:ed|ing)?|into (?:the |her |his |their )?(?:bed|chair|wheelchair|shower chair)|up in bed|dead ?weight|weight of (?:the )?(?:resident|patient)|(?:pull|push)\w* (?:the )?(?:resident|patient)|pick\w* (?:him|her|them) up|pick\w* up (?:the )?(?:resident|patient))\b
+
+strict handling = (PERSON and MOVEMENT) or PHRASE
+broad handling  = strict or (PERSON and MOVE_BROAD)
+care_general    = PERSON and not handling
+other           = everything else

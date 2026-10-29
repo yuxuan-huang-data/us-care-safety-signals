@@ -1,0 +1,4 @@
+shift,cases,mean_days_away,median_days_away
+day,1525,27.5,6.0
+night,304,32.3,8.0
+unknown,227,28.5,6.0
