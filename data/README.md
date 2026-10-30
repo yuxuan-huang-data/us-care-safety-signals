@@ -18,6 +18,7 @@ US nursing care facilities (NAICS 6231), OSHA Injury Tracking Application case d
 | `violence_days_away`, `violence_days_restricted` | Same, violence cases |
 
 Column totals match the national figures: 25,860 cases, 5,654 handling, 2,291 violence. Both tables are produced by Section 9 of [`resident-violence.ipynb`](../resident-violence/resident-violence.ipynb), from OSHA's release covering submissions through 2026-08-31. Version 1.x used the earlier release through 2026-03-15 (24,292 cases, 5,280 handling, 2,159 violence), which OSHA has since replaced.
+
 ## `nf-injury-by-size-2025.csv`
 
 The same data by OSHA establishment size code, converted to employee ranges per the OSHA ITA data dictionary.
