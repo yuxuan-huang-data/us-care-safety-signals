@@ -56,7 +56,7 @@ These are stated because they limit what this data can be used to argue.
 
 **Night shift severity.** Night-shift handling injuries average 32.3 days away (304 cases) against 27.5 for day shift (1,525 cases). The medians are 8.0 and 6.0 days. The difference is small, the night sample is small, and shift assignment depends on a boundary chosen by the analyst. No claim is made.
 
-**Facility-level link to pressure injury.** Facilities with higher resident pressure-ulcer rates (CMS) do not have higher staff injury rates (OSHA). Across 7,370 facilities linked through the [`crosswalk`](../crosswalk/), the DART injury rate and the long-stay pressure-ulcer rate are uncorrelated (Pearson r = −0.001; Spearman ρ = 0.024). This test was run on OSHA's earlier release and will be re-run when the crosswalk module is updated to the current release.
+**Facility-level link to pressure injury.** Facilities with higher resident pressure-ulcer rates (CMS) do not have higher staff injury rates (OSHA). Across 7,556 facilities linked through the [`crosswalk`](../crosswalk/), the DART injury rate and the long-stay pressure-ulcer rate are uncorrelated (Pearson r = 0.004; Spearman ρ = 0.018; OSHA release through 2026-08-31, CMS files dated 2026-10-01). The result held on the earlier releases as well (r = −0.001, n = 7,370).
 
 The likely explanation is measurement: a few injury cases per facility per year is too few to separate real differences from differences in reporting. The null result concerns facility-level correlation only.
 
