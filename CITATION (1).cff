@@ -1,0 +1,42 @@
+cff-version: 1.2.0
+message: "If you use this work or its derived data, please cite it as below."
+title: "US Care Safety Signals"
+abstract: >-
+  Analyses of publicly available US federal data on patient and caregiver
+  safety in healthcare facilities. Five modules: CMS-published
+  hospital-acquired pressure injury rates (PSI-03) across 3,056 US acute care
+  hospitals with Hospital-Acquired Condition Reduction Program status for
+  FY2026; resident-handling injuries (5,654 cases) and violence against
+  caregivers (2,291 cases) among 25,860 nursing-facility cases reported to
+  OSHA's Injury Tracking Application for 2025; a graded crosswalk linking
+  8,047 OSHA establishments to CMS-certified nursing homes; and an
+  out-of-sample validation of both narrative classification rules against
+  OSHA's OIICS coding on 28,074 nursing-facility cases from 2024. Facilities
+  are identified by federal identifier and state only.
+type: dataset
+authors:
+  - given-names: Yuxuan
+    family-names: Huang
+    affiliation: "Vantara Medical Equipment (Mahoraga Vantara LLC)"
+    city: New York
+    country: US
+keywords:
+  - patient safety
+  - pressure injury
+  - PSI-03
+  - hospital-acquired conditions
+  - caregiver injury
+  - occupational injury
+  - workplace violence
+  - safe patient handling
+  - nursing facilities
+  - OIICS
+  - record linkage
+  - CMS
+  - OSHA
+  - Medicare
+  - health services research
+license: CC-BY-4.0
+repository-code: "https://github.com/yuxuan-huang-data/us-care-safety-signals"
+date-released: 2026-10-29
+version: "2.0.0"
