@@ -11,12 +11,12 @@ signals:
     - id: ITA_CASE_DETAIL
       title: Injury Tracking Application case detail data
       publisher: OSHA
-      unit: one row per recordable case (OSHA Form 300A/301)
+      unit: one row per recordable case (OSHA Form 300/301)
       task_coded_by_publisher: false
       note: >-
-        OSHA has added OIICS event codes to the 2023 and 2024 case detail
-        files. OIICS division 1 (violence and other injuries by persons or
-        animals) is the official counterpart of this classification.
+        OSHA has added OIICS codes to the 2023 and 2024 case detail files,
+        generated with BLS's automated coder. Event code 11, "Violent acts by
+        other person", is the official counterpart of this classification.
 
 classification:
   rule: >-
@@ -27,43 +27,55 @@ classification:
     Resistance during care (pulling back, pushing back) alone is not violence.
   rule_file: resident-violence/derived/classification-rule.txt
   validation:
-    sample: 500 nursing-facility cases with silver-standard labels
+    sample: >-
+      500 nursing-facility cases labeled by an AI language model (silver
+      standard, not human-reviewed)
     labels_file: benchmark/benchmark-500-ai-prelabeled.csv
     precision: 0.961
     recall: 0.875
     status: development score; rule was written against the same sample
+  out_of_sample:
+    reference: OSHA OIICS event code 11
+    data: ITA Case Detail Data, 2024, NAICS 6231
+    cases: 28074
+    precision: 0.810
+    recall: 0.779
+    kappa: 0.776
+    share_rule: 0.078
+    share_oiics: 0.082
+    details: validation-oiics/
 
 distribution_2025:
-  source: ITA Case Detail Data, 2025, submissions through 2026-03-15
-  cases_naics_6231: 24292
-  violence_cases: 2159
+  source: ITA Case Detail Data, 2025, submissions through 2026-08-31
+  cases_naics_6231: 25860
+  violence_cases: 2291
   violence_share: 0.089
-  during_handling_task: 345
-  nursing_assistant_share: 0.754
-  days_away_sum: 15435
-  days_restricted_sum: 21199
-  cases_zero_days_away: 1475
-  cases_over_90_days_away: 56
-  longest_absence_days: 312
+  during_handling_task: 365
+  nursing_assistant_share: 0.749
+  days_away_sum: 17133
+  days_restricted_sum: 22596
+  cases_zero_days_away: 1561
+  cases_over_90_days_away: 62
+  longest_absence_days: 347
   mechanism_named:
-    hit_punch_strike: 955
-    grab_twist_pinch: 482
-    bite: 316
-    kick: 263
-    scratch: 187
-    push_shove: 125
+    hit_punch_strike: 1009
+    grab_twist_pinch: 520
+    bite: 336
+    kick: 278
+    scratch: 200
+    push_shove: 131
     spit: 31
   body_region_named:
-    head_face_eye: 646
-    hand_finger_wrist: 605
-    arm_shoulder: 560
-    back_neck: 391
-    chest_abdomen: 296
-    leg_knee_foot: 239
+    head_face_eye: 684
+    hand_finger_wrist: 635
+    arm_shoulder: 599
+    back_neck: 429
+    chest_abdomen: 317
+    leg_knee_foot: 247
 
 not_supported_by_this_data:
   - Injury rates per worker or per hour (establishments with no cases are absent from the case file)
-  - Interpretation of differences between states (violence share ranges 4.7% to 13.5% among the 15 largest states)
+  - Interpretation of differences between states (violence share ranges 5.1% to 13.2% among the 15 largest states)
 
 limitations:
   - Case detail submission applies only to establishments with 100 or more employees in designated industries.
@@ -71,4 +83,4 @@ limitations:
   - Violence is a keyword classification, not an OSHA field, in the 2025 file.
   - No establishment is named. A recorded injury does not establish fault.
 
-retrieved: 2026-09-20
+retrieved: 2026-10-29
