@@ -84,7 +84,9 @@ The rule was compared against the 500 nursing-facility cases in [`benchmark/`](.
 | Precision | 0.961 |
 | Recall | 0.875 |
 
-**This is a development score.** The rule was written while reading the same 500 cases, so the figures above overstate out-of-sample accuracy. An independent check against OSHA's own injury coding is planned and will be reported here.
+**This is a development score.** The rule was written while reading the same 500 cases, so the figures above overstate out-of-sample accuracy. These figures are replaced by an independent test.
+
+**Independent test against OSHA's own coding.** The frozen rule was scored against OSHA's OIICS event codes on 28,074 nursing-facility cases from 2024, a year the rule had never seen (see [`validation-oiics/`](../validation-oiics/)). Against OIICS code 11, "Violent acts by other person", the rule scores precision 0.810, recall 0.779, and Cohen's kappa 0.776. It assigns 7.8% of cases to violence against OSHA's 8.2%. These lower figures are the accuracy estimate for this rule.
 
 Of the seven cases the rule misses, four describe resistance rather than aggression (pulling away, pushing back), which the labeling guide treats as a boundary case.
 
