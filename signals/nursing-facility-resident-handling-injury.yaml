@@ -47,6 +47,14 @@ classification:
     strict_rule: {precision: 0.846, recall: 0.717}
     broad_rule: {precision: 0.698, recall: 0.804}
     labeled_share_handling: {value: 0.230, ci95: [0.177, 0.293]}
+  human_blind_review:
+    reviewer: author, blind to AI labels and rule predictions
+    cases: 200
+    agreement_with_ai: {handling_vs_not: 0.915, kappa: 0.758, three_category: 0.780, kappa_three_category: 0.658}
+    strict_rule_vs_human: {precision: 0.846, recall: 0.733}
+    broad_rule_vs_human: {precision: 0.698, recall: 0.822}
+    human_share_handling: {value: 0.225, ci95: [0.173, 0.288]}
+    labels_file: nursing-facility-handling/derived/validation-labeled.csv (column human_label)
   out_of_sample:
     reference: OSHA OIICS event code 71, source a person
     data: ITA Case Detail Data, 2024, NAICS 6231
