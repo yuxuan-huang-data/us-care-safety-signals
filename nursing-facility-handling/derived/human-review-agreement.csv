@@ -1,0 +1,3 @@
+measure,agreement,cohen_kappa
+handling vs not handling,0.915,0.758
+three categories,0.78,0.658

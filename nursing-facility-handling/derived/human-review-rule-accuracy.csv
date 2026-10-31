@@ -1,0 +1,5 @@
+reference,rule,reference positive,precision,recall
+AI labels,strict,46,0.846,0.717
+AI labels,broad,46,0.698,0.804
+human labels,strict,45,0.846,0.733
+human labels,broad,45,0.698,0.822
