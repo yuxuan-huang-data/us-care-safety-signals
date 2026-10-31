@@ -37,16 +37,42 @@ The back or lumbar region is named in the injury field of 2,071 handling cases (
 
 OSHA does not code injuries by task. A case is classified as **handling** when its narrative names a person being cared for (resident, patient) *and* a movement of that person (transfer, lift, reposition, boost, turn, and related terms). The full rule is in Section 5 of the notebook and exported to `derived/classification-rule.txt`. The rule is frozen and used unchanged in `../resident-violence/`.
 
-The rule was frozen, then checked against 200 randomly drawn nursing-facility cases. The sample was drawn blind to the rule: the file held only the narrative, not the rule's prediction. Each case was labeled `handling`, `care_general`, or `other` by an AI language model (Claude, Anthropic) under a written standard: a case is handling when the injury occurred while the employee was moving, supporting, or catching a resident's body. Sixteen boundary cases are explained in the `note` column. These labels were not independently reviewed by a human, so they are a silver standard; the independent test against OSHA's own coding below is the stronger check. The labels are published in `derived/validation-labeled.csv` so that anyone can check them.
+The rule was frozen, then checked against 200 randomly drawn nursing-facility cases. The sample was drawn blind to the rule: the file held only the narrative, not the rule's prediction. Each case was labeled `handling`, `care_general`, or `other` by an AI language model (Claude, Anthropic) under a written standard: a case is handling when the injury occurred while the employee was moving, supporting, or catching a resident's body. Sixteen boundary cases are explained in the `note` column. The author then labeled the same 200 cases independently, blind to the AI labels and to the rule's predictions, under the same written standard (see Human blind review below). Both sets of labels are published in `derived/validation-labeled.csv`, in the columns `label` (AI) and `human_label` (author), so that anyone can check them.
 
 | Rule | Precision | Recall |
 |---|---|---|
 | Strict (used for all figures above) | 0.846 | 0.717 |
 | Broad (adds movement described in other words) | 0.698 | 0.804 |
 
+These scores use the AI labels as the reference. Scores against the author's labels are in the next section.
+
 In the labeled sample, 46 of 200 cases were handling (23.0%; 95% CI 17.7%–29.3%). The strict rule's 21.9% falls inside that range. The broad rule gives 7,622 cases (29.5%), 79,573 days away and 161,604 days restricted; readers who prefer a higher-recall estimate can use those figures, at the cost of precision.
 
 The sample was drawn from OSHA's earlier release of the same year's data (see Data release below). Precision and recall depend only on the labeled narratives, so they carry over unchanged.
+
+### Human blind review
+
+The author labeled all 200 cases without seeing the AI labels or the rule's predictions. A machine translation of each narrative into Chinese was shown beside the original English as a reading aid; the English text governed. Labels were not changed after the AI labels were seen. The comparison is reproduced by [`human-review.ipynb`](human-review.ipynb), which reads only the published file.
+
+**Agreement between the two labelers**
+
+| | Agreement | Cohen's kappa |
+|---|---|---|
+| Handling vs not handling | 91.5% | 0.758 |
+| Three categories | 78.0% | 0.658 |
+
+The AI labeled 46 cases handling; the author labeled 45. Most three-category disagreement is between `care_general` and `other`, a boundary that does not affect the handling rule.
+
+**The frozen rule against each reference**
+
+| Rule | Against AI labels (precision / recall) | Against author's labels (precision / recall) |
+|---|---|---|
+| Strict | 0.846 / 0.717 | 0.846 / 0.733 |
+| Broad | 0.698 / 0.804 | 0.698 / 0.822 |
+
+The rule's measured accuracy is nearly the same whichever labeler is the reference. In the author's labels, 45 of 200 cases were handling (22.5%; 95% CI 17.3%–28.8%); the strict rule's 21.9% falls inside that range.
+
+The 17 handling disagreements fall into a few groups: moving equipment with no resident in it; catching or helping up a resident who was falling; a resident striking the employee just before or during a move; and "changing a resident" with no movement described. The cases are listed in the notebook.
 
 **Independent test against OSHA's own coding.** The frozen strict rule was scored against OSHA's OIICS codes on 28,074 nursing-facility cases from 2024, a year the rule had never seen (see [`validation-oiics/`](../validation-oiics/)). The OIICS counterpart is event code 71, "Overexertion while moving or manipulating external object(s)", with a person as the source. Against it the rule scores precision 0.695, recall 0.676, and Cohen's kappa 0.614. It assigns 18.2% of cases to handling against OSHA's 18.7%. Part of the disagreement is a counting convention: OIICS assigns one primary event per case, while this rule can co-occur with other labels. Rule gaps found in the test are listed in `validation-oiics/` and were deliberately not fixed against the 2024 data.
 
@@ -87,7 +113,8 @@ The notebook downloads the OSHA file and, if not present, `derived/validation-la
 
 - ITA submission is required only of establishments meeting OSHA's size and industry thresholds. Small facilities are under-represented.
 - Narratives are free text written by employers. Detail and wording vary.
-- The handling classification is a keyword rule, not an OSHA field. Its precision and recall against the labeled sample and against OSHA's coding are reported above.
+- The handling classification is a keyword rule, not an OSHA field. Its precision and recall against AI labels, against the author's blind labels, and against OSHA's coding are reported above.
+- The human review was done by one person, the author. A second independent human reviewer would strengthen it.
 - Open cases undercount final days away.
 - No establishment is named in this analysis. OSHA: recording an injury does not mean the employer was at fault or violated any OSHA rule.
 
