@@ -1,6 +1,6 @@
 # Analysis Plan: Patient Harm in FDA MAUDE Reports for Patient-Transfer and Lifting Devices
 
-Written and committed 2026-11-07, before the second validation sample (Sample B) is drawn or read. The commit time of this file is the record that the questions, definitions, and rules below were fixed in advance.
+Written and committed 2026-11-08, before the second validation sample (Sample B) is drawn or read. The commit time of this file is the record that the questions, definitions, and rules below were fixed in advance.
 
 ## Data
 
