@@ -1,0 +1,7 @@
+,cases,share of lift cases
+"moving the device (pushing, steering, device rolling or tipping)",121,0.167
+"floor, threshold, incline, or space",12,0.017
+"power, battery, or malfunction",62,0.086
+"sling or pad (placing, removing, positioning)",137,0.189
+resident behavior during lift use,104,0.144
+catching or holding a resident during lift use,162,0.224

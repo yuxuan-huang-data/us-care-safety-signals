@@ -1,0 +1,7 @@
+EQ_LIFT = \b(?:hoyer|mechanical lift|(?:total|full[- ]body|ceiling|stand(?:ing)?[- ]?up|sit[- ]to[- ]stand)\s*lift|sit[- ]to[- ]stand|stand[- ]?aid|stand[- ]?assist(?: device)?|lift sling|lift pad|sling|(?:the|a|resident|patient|electric|battery) lift\b(?! (?:with|the resident|resident|patient|him|her))|\] lift|lift (?:was|tipped|rolled|bumped|battery|malfunction\w*|failed|broke))
+EQ_AID  = \b(?:gait belt|draw ?sheet|slide ?sheet|slide ?board|transfer board|blue pad|bed pad|turn(?:ing)? sheet|lift pad)\b
+EQ_VEH  = \b(?:van|bus|vehicle|transport(?:ation)?)\b.{0,60}\blift\b|\blift\b.{0,60}\b(?:van|bus|vehicle)\b|wheelchair lift
+
+vehicle lift = EQ_VEH
+patient lift = EQ_LIFT and not vehicle lift
+low-tech aid = EQ_AID and not patient lift

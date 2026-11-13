@@ -1,0 +1,4 @@
+rule,aid,lift,none,All
+lift,1,90,9,100
+none,1,5,94,100
+All,2,95,103,200
