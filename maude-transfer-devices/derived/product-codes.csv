@@ -1,0 +1,56 @@
+product_code,device_name,device_class,regulation_number,medical_specialty_description,used,excluded_reason,group
+IKX,"Aid, Transfer",1,890.5050,Physical Medicine,True,,transfer device
+GNC,"Antigens, Febrile, Slide And Tube, All Groups, Salmonella Spp.",2,866.3550,Microbiology,False,"device does not lift, transfer, or transport a patient",
+GSI,"Antigens, Slide And Tube, All Types, Listeria Monocytogenes",1,866.3355,Microbiology,False,"device does not lift, transfer, or transport a patient",
+GSL,"Antigens, Slide And Tube, Francisella Tularensis",2,866.3280,Microbiology,False,"device does not lift, transfer, or transport a patient",
+RDV,"Automotive Accessory, Automobile Or Transport Vehicle",N,,Unknown,False,"device does not lift, transfer, or transport a patient",
+LGN,"Chamber, Patient Transport Isolation",2,880.5450,General Hospital,False,"device does not lift, transfer, or transport a patient",
+KIY,"Chamber, Slide Culture",1,864.2240,Hematology,False,"device does not lift, transfer, or transport a patient",
+ONB,Closed Antineoplastic And Hazardous Drug Reconstitution And Transfer System,2,880.5440,General Hospital,False,"device does not lift, transfer, or transport a patient",
+KDK,"Container, Transport, Kidney",2,876.5880,"Gastroenterology, Urology",False,"device does not lift, transfer, or transport a patient",
+KES,"Coverslips, Microscope Slide",1,864.3010,Pathology,False,"device does not lift, transfer, or transport a patient",
+JSL,"Culture Media, Anaerobic Transport",1,866.2390,Microbiology,False,"device does not lift, transfer, or transport a patient",
+JSM,"Culture Media, Non-Propagating Transport",1,866.2390,Microbiology,False,"device does not lift, transfer, or transport a patient",
+JSN,"Culture Media, Propagating Transport",1,866.2390,Microbiology,False,"device does not lift, transfer, or transport a patient",
+SIH,Device For Home Collection And Transport Of Specimens By Lay Users For Use In A Cleared Non-Viral Sti Molecular Assay,2,866.2920,Microbiology,False,"device does not lift, transfer, or transport a patient",
+SEP,Device For Home Collection And Transport Of Vaginal Specimens By Lay Users For Use In An Approved Hpv Molecular Assay,2,866.2920,Microbiology,False,"device does not lift, transfer, or transport a patient",
+FRZ,"Device, Patient Transfer, Powered",2,880.6775,General Hospital,True,,transfer device
+FMR,"Device, Transfer, Patient, Manual",1,880.6785,General Hospital,True,,transfer device
+QYV,Digital Cervical Cytology Slide Imaging System With Artificial Intelligence Algorithm,2,864.3900,Pathology,False,"device does not lift, transfer, or transport a patient",
+RFN,Fiber Optic Communication And Data Transfer,N,,Unknown,False,"device does not lift, transfer, or transport a patient",
+QQQ,"Guide And Positioner, Ophthalmic Drug Delivery Device",1,886.4300,Ophthalmic,False,"device does not lift, transfer, or transport a patient",
+FPL,"Incubator, Neonatal Transport",2,880.5410,General Hospital,False,"device does not lift, transfer, or transport a patient",
+OUW,"Infant Positioner, Rx, Use In Highly Monitored Setting",1,880.5680,General Hospital,False,"device does not lift, transfer, or transport a patient",
+PQH,Iodinated Contrast Media Transfer Tubing Set,2,880.5440,General Hospital,False,"device does not lift, transfer, or transport a patient",
+IEH,"Lamps, Slide Warming",1,864.3010,Pathology,False,"device does not lift, transfer, or transport a patient",
+FNG,"Lift, Patient, Ac-Powered",2,880.5500,General Hospital,True,,patient lift
+FSA,"Lift, Patient, Non-Ac-Powered",1,880.5510,General Hospital,True,,patient lift
+PAH,"Mesh, Surgical, Synthetic, Urogynecologic, For Stress Urinary Incontinence, Female, Mini-Sling",2,878.3300,"General, Plastic Surgery",False,"device does not lift, transfer, or transport a patient",
+PCE,Permanently Mounted Wheelchair Platform Lift,2,890.3930,Physical Medicine,False,"device does not lift, transfer, or transport a patient",
+KIL,"Positioner, Socket",1,888.4540,Orthopedic,False,"device does not lift, transfer, or transport a patient",
+KMY,"Positioner, Tooth, Preformed",1,872.5525,Dental,False,"device does not lift, transfer, or transport a patient",
+PCD,Powered Stairway Chair Lift,2,890.5150,Physical Medicine,False,"device does not lift, transfer, or transport a patient",
+MKQ,"Processor, Cervical Cytology Slide, Automated",3,,Unknown,False,"device does not lift, transfer, or transport a patient",
+MNM,"Reader, Cervical Cytology Slide, Automated",3,,Unknown,False,"device does not lift, transfer, or transport a patient",
+LHI,"Set, I.V. Fluid Transfer",2,880.5440,General Hospital,False,"device does not lift, transfer, or transport a patient",
+KSB,"Set, Transfer (Blood/Plasma)",2,864.9875,Hematology,False,"device does not lift, transfer, or transport a patient",
+KPA,"Slide Stainer, Automated",1,864.3800,Pathology,False,"device does not lift, transfer, or transport a patient",
+KIN,"Slide Stainer, Contact Type",1,864.3800,Pathology,False,"device does not lift, transfer, or transport a patient",
+KIO,"Slide Stainer, Immersion Type",1,864.3800,Pathology,False,"device does not lift, transfer, or transport a patient",
+ILI,"Sling, Arm",1,890.3640,Physical Medicine,False,"device does not lift, transfer, or transport a patient",
+ILE,"Sling, Arm, Overhead Supported",1,890.3475,Physical Medicine,False,"device does not lift, transfer, or transport a patient",
+INE,"Sling, Overhead Suspension, Wheelchair",1,890.3910,Physical Medicine,False,"device does not lift, transfer, or transport a patient",
+GKJ,"Spinner, Slide, Automated",1,864.5850,Hematology,False,"device does not lift, transfer, or transport a patient",
+FPP,"Stretcher, Hand-Carried",1,880.6900,General Hospital,True,,stretcher
+NZD,"Stretcher, Patient Restraint",1,880.6900,General Hospital,False,"device does not lift, transfer, or transport a patient",
+FPO,"Stretcher, Wheeled",2,880.6910,General Hospital,True,,stretcher
+INK,"Stretcher, Wheeled, Powered",2,890.3690,Physical Medicine,True,,stretcher
+QUB,Suction Lipoplasty System For Removal And Transfer,2,878.5040,"General, Plastic Surgery",False,"device does not lift, transfer, or transport a patient",
+MSB,"System And Accessories, Isolated Heart, Transport And Preservation",2,876.5880,"Gastroenterology, Urology",False,"device does not lift, transfer, or transport a patient",
+JTW,"System, Transport, Aerobic",1,866.2900,Microbiology,False,"device does not lift, transfer, or transport a patient",
+IEG,"Table, Slide Warming",1,864.3010,Pathology,False,"device does not lift, transfer, or transport a patient",
+QMC,"Transport Medium, Notified Per The Vtm Guidance",1,866.2390,Microbiology,False,"device does not lift, transfer, or transport a patient",
+JTX,"Transport Systems, Anaerobic",1,866.2900,Microbiology,False,"device does not lift, transfer, or transport a patient",
+ILK,"Transport, Patient, Powered",2,890.5150,Physical Medicine,True,,powered transport
+OHZ,Urine Transport Kit (Excludes Hiv Testing),1,864.3250,Pathology,False,"device does not lift, transfer, or transport a patient",
+PSY,Whole Slide Imaging System,2,864.3700,Pathology,False,"device does not lift, transfer, or transport a patient",

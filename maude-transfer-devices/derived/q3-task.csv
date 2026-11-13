@@ -1,0 +1,9 @@
+task,A,B,total
+lateral,1,2,3
+lift_sling,40,78,118
+not_stated,85,0,85
+not_transfer,40,25,65
+repositioning,2,0,2
+sit_to_stand,4,4,8
+stretcher_transport,28,91,119
+total,200,200,400

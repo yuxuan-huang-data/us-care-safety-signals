@@ -1,0 +1,3 @@
+rule,reports,patient fell (review),flagged,correct,precision,recall
+original,198,42,49,35,0.714,0.833
+revised,198,42,29,26,0.897,0.619

@@ -1,0 +1,4 @@
+sample,reports,patient injured,share,ci95_low,ci95_high,implied reports,implied low,implied high,staff injured
+A,200,32,0.16,0.116,0.217,2310,1670,3135,8
+B,200,40,0.2,0.15,0.261,2888,2172,3767,15
+A+B,400,72,0.18,0.145,0.221,2599,2100,3186,23

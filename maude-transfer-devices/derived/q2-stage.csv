@@ -1,0 +1,9 @@
+stage,A,B,total,patient injured only
+accessory,2,4,6,5
+device_defect,14,23,37,27
+environment,1,1,2,2
+maintenance_age,5,2,7,3
+patient_behavior,1,2,3,2
+unclear,6,2,8,7
+use_training,16,21,37,26
+total,45,55,100,72

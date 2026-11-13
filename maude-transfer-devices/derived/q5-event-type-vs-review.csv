@@ -1,0 +1,6 @@
+event_type,none,patient,staff,unclear,total
+Death,0,4,1,0,5
+Injury,4,41,10,1,56
+Malfunction,293,27,11,4,335
+blank,3,0,1,0,4
+total,300,72,23,5,400
