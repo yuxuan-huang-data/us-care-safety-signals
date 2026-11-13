@@ -1,0 +1,3 @@
+setting,establishments,hours,all_cases,handling,lateral,handling_lost_time,lateral_lost_time,all_cases_rate,handling_rate,lateral_rate,handling_lost_time_rate
+hospital,4034,8806075520,181141.0,20623.0,1725.0,8452.0,743.0,4.114,0.468,0.039,0.192
+nursing facility,3806,5774381974,23539.0,5116.0,21.0,1872.0,4.0,0.815,0.177,0.001,0.065
