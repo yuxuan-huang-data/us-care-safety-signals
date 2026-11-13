@@ -1,0 +1,15 @@
+lateral transfer between surfaces:
+  \b(?:lateral(?:ly)? (?:transfer\w*|slid\w*|mov\w*)|bed to bed|(?:to|from|onto|off|off of|on to|over to) (?:the |a |an |his |her )?(?:\w+ )?(?:operating|or|surgical|procedure|exam|examination|ct|cat scan|mri|x-?ray|imaging|radiology|cath\w*|ir|endoscopy|dialysis) (?:room )?(?:table|bed)|(?:operating|or|surgical|procedure|exam|ct|mri|x-?ray|imaging) table to|(?:bed|table|stretcher|gurney|cart|litter|cot) to (?:a |an |the |another |new |hospital |ems |shower |her |his )?(?:bed|table|stretcher|gurney|cart|litter|cot)|(?:to|from|onto|off|off of|on to|over to) (?:the |a |an |his |her )?(?:\w+ )?(?:stretcher|gurney|litter|cot)\b|(?:stretcher|gurney|litter|cot) to|slid\w* (?:the )?(?:resident|patient|pt|him|her) (?:over|across|onto|from))\b
+recovery from the floor:
+  \b(?:off (?:of )?the (?:floor|ground)|from the (?:floor|ground)|up off|(?:found|was|lying) on the floor|lift\w* (?:\w+ ){0,2}(?:from|off) (?:the )?floor)\b
+catching or supporting a falling person:
+  \b(?:catch\w*|caught (?:the |a )?(?:resident|patient|him|her)|began to fall|started to fall|was falling|prevent\w* (?:\w+ ){0,2}from falling|keep \w+ from falling|lower\w* (?:\w+ ){0,2}to the (?:floor|ground)|(?:legs|knees) (?:gave out|buckled))\b
+seated or standing transfer:
+  \b(?:(?:bed|chair|recliner|wheel ?chair|w/?c|commode|toilet|shower chair|geri ?chair) to (?:a |the )?(?:bed|chair|recliner|wheel ?chair|w/?c|commode|toilet|shower chair|geri ?chair)|sit[- ]to[- ]stand|stand[- ]pivot|pivot\w*|into (?:the |a |her |his )?(?:wheel ?chair|chair|recliner|w/?c)|out of (?:the |a |her |his )?(?:wheel ?chair|chair|bed|recliner)|on(?:to)? (?:the )?(?:toilet|commode)|off (?:the )?(?:toilet|commode)|(?:to|help\w* \w+) stand)\b
+repositioning in bed:
+  \b(?:pull\w* (?:\w+ ){0,3}up (?:in|to)|boost\w*|reposition\w*|turn\w* (?:\w+ ){0,3}(?:in bed|over|on (?:her|his|their|the) side)|roll\w* (?:the |a )?(?:resident|patient|pt|him|her)|draw ?sheet|turning sheet|up in bed|head of (?:the )?bed)\b
+ambulation:
+  \b(?:ambulat\w*|walking (?:the |a |with (?:the |a )?)?(?:resident|patient|pt))\b
+transfer, type not stated:
+  \btransfer\w*\b
+Assigned in the order above; first match wins. Otherwise: handling, task not stated.

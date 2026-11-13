@@ -1,0 +1,9 @@
+task,hospital,nursing facility,hospital share,nursing facility share
+lateral transfer between surfaces,1726,22,0.083,0.004
+recovery from the floor,280,145,0.014,0.026
+catching or supporting a falling person,780,230,0.038,0.041
+seated or standing transfer,1942,788,0.094,0.139
+repositioning in bed,5347,1231,0.258,0.218
+ambulation,304,24,0.015,0.004
+"transfer, type not stated",2951,1482,0.143,0.262
+"handling, task not stated",7355,1732,0.356,0.306

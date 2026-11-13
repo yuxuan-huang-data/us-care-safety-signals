@@ -1,0 +1,3 @@
+setting,rule lateral,reviewer lateral,precision,ci95_low,ci95_high
+hospital,54,45,0.833,0.713,0.91
+nursing facility,1,1,1.0,0.207,1.0

@@ -1,0 +1,17 @@
+setting,task,cases,mean_days_away,median_days_away,over_90_days
+hospital,ambulation,304,18.6,0.0,23
+hospital,catching or supporting a falling person,780,14.9,0.0,35
+hospital,"handling, task not stated",7355,15.0,0.0,439
+hospital,lateral transfer between surfaces,1726,16.5,0.0,105
+hospital,recovery from the floor,280,13.3,0.0,13
+hospital,repositioning in bed,5347,16.4,0.0,341
+hospital,seated or standing transfer,1942,16.9,0.0,127
+hospital,"transfer, type not stated",2951,11.6,0.0,128
+nursing facility,ambulation,24,7.6,0.0,1
+nursing facility,catching or supporting a falling person,230,6.7,0.0,7
+nursing facility,"handling, task not stated",1732,10.4,0.0,66
+nursing facility,lateral transfer between surfaces,22,1.8,0.0,0
+nursing facility,recovery from the floor,145,9.6,0.0,6
+nursing facility,repositioning in bed,1231,9.6,0.0,36
+nursing facility,seated or standing transfer,788,11.2,0.0,35
+nursing facility,"transfer, type not stated",1482,11.1,0.0,64
