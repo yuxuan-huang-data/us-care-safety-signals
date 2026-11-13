@@ -1,0 +1,5 @@
+staff measure,patient measure,hospitals,spearman rho,p
+handling_rate,psi03,1412,-0.076,0.0041
+handling_rate,psi08,1420,-0.051,0.0534
+lateral_rate,psi03,1412,-0.002,0.9543
+all_cases_rate,psi03,1412,-0.085,0.0013

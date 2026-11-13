@@ -1,0 +1,3 @@
+hacrp_penalty,hospitals,median_handling_rate,median_all_cases_rate,mann_whitney_p_handling
+No,1300,0.5245,5.12,0.014
+Yes,374,0.4245,4.5915,0.014

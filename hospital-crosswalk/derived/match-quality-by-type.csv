@@ -1,0 +1,21 @@
+tier,hospital_type,count,median
+A,Acute Care Hospitals,1689,1059.0
+A,Childrens,40,2165.0
+A,Critical Access Hospitals,566,196.0
+A,Dedicated Cancer Care,3,9781.0
+A,Long-term,1,218.0
+A,Psychiatric,233,226.0
+A,Rural Emergency Hospital,4,55.0
+B,Acute Care Hospitals,362,1092.0
+B,Childrens,11,3740.0
+B,Critical Access Hospitals,127,178.0
+B,Dedicated Cancer Care,1,1437.0
+B,Long-term,1,266.0
+B,Psychiatric,36,234.0
+B,Rural Emergency Hospital,1,170.0
+C,Acute Care - Veterans Administration,1,43.0
+C,Acute Care Hospitals,59,1091.0
+C,Childrens,3,3445.0
+C,Critical Access Hospitals,34,186.0
+C,Psychiatric,7,235.0
+C,Rural Emergency Hospital,1,220.0
