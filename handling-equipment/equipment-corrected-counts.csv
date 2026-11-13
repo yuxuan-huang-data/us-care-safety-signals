@@ -1,0 +1,4 @@
+quantity,estimate,low,high,share of handling cases
+handling cases with no equipment mentioned,4520,4208,4674,0.799
+"handling cases with a lift (rule-found, corrected)",554,508,581,0.098
+handling cases with a lift the rule missed,240,106,539,0.042
