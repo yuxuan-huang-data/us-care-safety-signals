@@ -1,0 +1,48 @@
+cff-version: 1.2.0
+message: "If you use this work or its derived data, please cite it as below."
+title: "US Care Safety Signals"
+abstract: >-
+  Analyses of public US federal data on injuries to caregivers and harm to
+  patients during patient handling and transfer in hospitals and nursing
+  facilities. Modules cover resident-handling injuries (5,654 of 25,860
+  nursing-facility cases reported to OSHA for 2025), the handling task under
+  way in hospitals and nursing facilities (about 1,440 hospital injuries
+  during lateral transfers between surfaces), lifting equipment mentioned in
+  injury narratives, violence against caregivers, patient harm in 14,439 FDA
+  MAUDE reports for patient lifts, transfer devices, and stretchers
+  (2015-2025), hospital-acquired pressure injury and HACRP penalties across
+  3,056 hospitals, a graded crosswalk linking 8,047 OSHA establishments to
+  CMS-certified nursing homes, and an out-of-sample validation against OSHA's
+  OIICS coding. Every text-classification rule is validated against blind
+  human review. Facilities are identified by federal identifier and state
+  only; no product or manufacturer is named.
+type: dataset
+authors:
+  - given-names: Yuxuan
+    family-names: Huang
+    affiliation: "Vantara Medical Equipment (Mahoraga Vantara LLC)"
+    city: New York
+    country: US
+keywords:
+  - patient safety
+  - pressure injury
+  - PSI-03
+  - hospital-acquired conditions
+  - caregiver injury
+  - occupational injury
+  - workplace violence
+  - safe patient handling
+  - nursing facilities
+  - OIICS
+  - FDA MAUDE
+  - medical device adverse events
+  - lateral transfer
+  - record linkage
+  - CMS
+  - OSHA
+  - Medicare
+  - health services research
+license: CC-BY-4.0
+repository-code: "https://github.com/yuxuan-huang-data/us-care-safety-signals"
+date-released: 2026-11-12
+version: "2.0.0"
