@@ -1,0 +1,7 @@
+setting,injuries,basis,lost-time cases,days away,days restricted,"direct, low ($M)","direct + indirect, low ($M)","direct, high ($M)","direct + indirect, high ($M)"
+hospital,handling,rule count,8473,312566,461884,271.3,569.8,400.9,841.9
+hospital,handling,adjusted for precision,6778,312566,461884,217.1,455.8,320.7,673.5
+nursing facility,handling,rule count,2056,58178,125621,65.8,138.3,97.3,204.3
+nursing facility,handling,adjusted for precision,1836,58178,125621,58.8,123.5,86.9,182.4
+hospital,lateral transfer,rule count,743,28358,41597,23.8,50.0,35.2,73.8
+hospital,lateral transfer,adjusted for precision,619,28358,41597,19.8,41.6,29.3,61.5

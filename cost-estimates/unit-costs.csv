@@ -1,0 +1,4 @@
+input,value,source
+"unit cost, low",32023.0,"OSHA $afety Pays, strain, NCCI data"
+"unit cost, high",47316.0,"NCCI via NSC Injury Facts, all lost-time claims, AY 2022-2023"
+indirect cost ratio,1.1,"OSHA $afety Pays, claims >= $10,000"
