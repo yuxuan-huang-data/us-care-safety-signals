@@ -1,5 +1,7 @@
 # US Care Safety Signals
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24408190.svg)](https://doi.org/10.5281/zenodo.24408190)
+
 Analyses of public US federal data on injuries to caregivers and harm to patients during patient handling and transfer in hospitals and nursing facilities, with every classification rule validated against blind human review.
 
 All source data is US Government work (17 U.S.C. §105). Every figure is reproducible from the notebooks in this repository.
@@ -68,15 +70,21 @@ The FDA module needs a free openFDA API key; see its README.
 
 ## Citation
 
-See [`CITATION.cff`](CITATION.cff), or use "Cite this repository" on GitHub.
+Huang, Y. (2026). *US Care Safety Signals: federal data analyses of caregiver injury and patient harm during patient handling and transfer* (Version 2.0.1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.24408190
+
+The DOI above always resolves to the latest version. Machine-readable metadata is in [`CITATION.cff`](CITATION.cff), which GitHub's "Cite this repository" button reads.
 
 ## License
 
 Code: MIT ([`LICENSE`](LICENSE)). Data and derived files: CC-BY-4.0 ([`LICENSE-data`](LICENSE-data)). Source data is US Government work and not subject to copyright.
 
+## Narrative text and product names
+
+The case narratives are employer-written text published by OSHA. They are reproduced verbatim in the review samples so that the labels can be audited against the source. A few narratives name a product. Those are the employers' words. No product is evaluated, recommended, or compared anywhere in the analysis, and no inference about any product is drawn from these narratives. The token `hoyer` also appears in the frozen classification rule, where it stands for a mechanical floor lift — the genericized usage found in the narratives themselves.
+
 ## Disclosure
 
-The author distributes a powered patient transfer system to US healthcare facilities. That is a reason every result here is reported whichever way it falls. No product is named, evaluated, or compared.
+The author distributes a powered patient transfer system to US healthcare facilities. That is a reason every result here is reported whichever way it falls. No product is evaluated, recommended, or compared.
 
 ---
 
