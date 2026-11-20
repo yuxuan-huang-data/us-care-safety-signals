@@ -24,8 +24,8 @@ authors:
   - given-names: Yuxuan
     family-names: Huang
     affiliation: "Mahoraga Vantara LLC"
-    city: New York
     country: US
+    orcid: "https://orcid.org/0009-0004-6736-3743"
 keywords:
   - patient safety
   - pressure injury
@@ -46,6 +46,8 @@ keywords:
   - Medicare
   - health services research
 license: CC-BY-4.0
+license-url: "https://creativecommons.org/licenses/by/4.0/"
+doi: "10.5281/zenodo.0000000"
 repository-code: "https://github.com/yuxuan-huang-data/us-care-safety-signals"
 date-released: 2026-11-14
 version: "2.0.0"
