@@ -130,4 +130,4 @@ See `CITATION.cff` at the repository root.
 
 Code: MIT. Derived files: CC-BY-4.0. Source data is US Government work and not subject to copyright.
 
-Yuxuan Huang · Vantara Medical Equipment (Mahoraga Vantara LLC), New York
+Yuxuan Huang · Mahoraga Vantara LLC

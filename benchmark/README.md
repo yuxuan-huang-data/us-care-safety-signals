@@ -61,4 +61,4 @@ A case can carry more than one label, so the counts sum to more than 500.
 
 Labels and derived columns: CC-BY-4.0. Source narratives are US Government work and not subject to copyright.
 
-Yuxuan Huang · Vantara Medical Equipment (Mahoraga Vantara LLC), New York
+Yuxuan Huang · Mahoraga Vantara LLC

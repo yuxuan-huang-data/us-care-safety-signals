@@ -122,4 +122,4 @@ When OSHA republishes, update the file names in Section 2. CMS files are located
 
 Code: MIT. Crosswalk and derived files: CC-BY-4.0. Source data is US Government work and not subject to copyright.
 
-Yuxuan Huang · Vantara Medical Equipment (Mahoraga Vantara LLC), New York
+Yuxuan Huang · Mahoraga Vantara LLC

@@ -57,4 +57,4 @@ Population and filters as in [`injury-rates/`](../injury-rates/): establishments
 
 Code: MIT. Derived files: CC-BY-4.0. Source data is US Government work and not subject to copyright.
 
-Yuxuan Huang · Vantara Medical Equipment (Mahoraga Vantara LLC)
+Yuxuan Huang · Mahoraga Vantara LLC

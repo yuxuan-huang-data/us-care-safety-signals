@@ -80,4 +80,4 @@ The author distributes a powered patient transfer system to US healthcare facili
 
 ---
 
-Yuxuan Huang · Vantara Medical Equipment (Mahoraga Vantara LLC)
+Yuxuan Huang · Mahoraga Vantara LLC

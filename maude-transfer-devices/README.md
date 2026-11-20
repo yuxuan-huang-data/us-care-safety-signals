@@ -136,4 +136,4 @@ The author distributes a powered patient transfer system to US healthcare facili
 
 Code: MIT. Derived files: CC-BY-4.0. Source data is US Government work and not subject to copyright.
 
-Yuxuan Huang · Vantara Medical Equipment (Mahoraga Vantara LLC)
+Yuxuan Huang · Mahoraga Vantara LLC

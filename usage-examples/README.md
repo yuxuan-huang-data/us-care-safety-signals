@@ -37,4 +37,4 @@ Each module's README states what its figures can and cannot show. Three limits a
 
 Code: MIT. Derived files: CC-BY-4.0. Source data is US Government work and not subject to copyright.
 
-Yuxuan Huang · Vantara Medical Equipment (Mahoraga Vantara LLC)
+Yuxuan Huang · Mahoraga Vantara LLC

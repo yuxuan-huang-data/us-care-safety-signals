@@ -23,7 +23,7 @@ type: dataset
 authors:
   - given-names: Yuxuan
     family-names: Huang
-    affiliation: "Vantara Medical Equipment (Mahoraga Vantara LLC)"
+    affiliation: "Mahoraga Vantara LLC"
     city: New York
     country: US
 keywords:

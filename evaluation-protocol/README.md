@@ -134,4 +134,4 @@ The author distributes a powered patient transfer system to US healthcare facili
 
 CC-BY-4.0. Reuse, adapt, and extend it; attribution is enough.
 
-Yuxuan Huang · Vantara Medical Equipment (Mahoraga Vantara LLC)
+Yuxuan Huang · Mahoraga Vantara LLC

@@ -51,4 +51,4 @@ Rule counts before adjustment, and the days away and restricted for each group, 
 
 Code: MIT. Derived files: CC-BY-4.0.
 
-Yuxuan Huang · Vantara Medical Equipment (Mahoraga Vantara LLC)
+Yuxuan Huang · Mahoraga Vantara LLC

@@ -136,4 +136,4 @@ work and not subject to copyright.
 
 ---
 
-Yuxuan Huang · Vantara Medical Equipment (Mahoraga Vantara LLC), New York
+Yuxuan Huang · Mahoraga Vantara LLC

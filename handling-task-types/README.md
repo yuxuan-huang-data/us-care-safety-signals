@@ -94,4 +94,4 @@ The author distributes a powered lateral-transfer system. That is a reason to re
 
 Code: MIT. Derived files: CC-BY-4.0. Source data is US Government work and not subject to copyright.
 
-Yuxuan Huang · Vantara Medical Equipment (Mahoraga Vantara LLC)
+Yuxuan Huang · Mahoraga Vantara LLC
