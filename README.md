@@ -51,6 +51,22 @@ All source data is US Government work (17 U.S.C. §105). Every figure is reprodu
 
 Supporting material: [`benchmark/`](benchmark/) (500 labeled narratives used to develop the rules), [`data/`](data/) (tables by state and establishment size), [`signals/`](signals/) (machine-readable summaries), [`METHODOLOGY.md`](METHODOLOGY.md) (method for `hospital-psi/`).
 
+## Dataset files
+
+Three files are built to be reused on their own. All are CSV, CC BY 4.0, and identify facilities by federal identifier and state only — no facility name appears.
+
+**OSHA–CMS nursing home crosswalk** — [`crosswalk/osha-cms-crosswalk-nf-2025.csv`](crosswalk/osha-cms-crosswalk-nf-2025.csv)
+8,047 rows. Links OSHA establishments to CMS-certified nursing homes (CCN). Columns: `osha_establishment_id`, `cms_ccn`, `tier` (A/B/C), `name_score`, `addr_score`, `hno_match`, `zip_match`. Method and match-quality checks in [`crosswalk/`](crosswalk/).
+
+**OSHA–CMS hospital crosswalk** — [`hospital-crosswalk/osha-cms-crosswalk-hospital-2025.csv`](hospital-crosswalk/osha-cms-crosswalk-hospital-2025.csv)
+3,180 rows. Same structure, for CMS-certified hospitals. Method and checks in [`hospital-crosswalk/`](hospital-crosswalk/).
+
+**Facility-level injury rates** — [`injury-rates/derived/facility-rates-2025.csv`](injury-rates/derived/facility-rates-2025.csv)
+7,554 rows. Per-establishment employees, hours, case counts, handling and lateral-transfer counts, and rates per 100 full-time workers, with the CMS CCN and match tier where a crosswalk match exists.
+
+OSHA and CMS share no facility identifier, so any analysis connecting staff injury to patient outcomes, staffing, or inspection results has to solve this linkage first. These files are that linkage, graded, with the quality checks published alongside. Worked joins are in [`usage-examples/`](usage-examples/).
+
+
 ## How the work is done
 
 - **Public sources only.** Every federal input is downloaded from the agency by the notebook itself.
