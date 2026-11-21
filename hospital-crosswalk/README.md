@@ -21,15 +21,49 @@ OSHA Injury Tracking Application Form 300A, 2025 (submissions through 2026-08-31
 | Tier B: same house number and address score ≥ 0.65 | 539 |
 | Tier C: name score ≥ 0.95 in the same city | 105 |
 
-**Match quality.** Critical access hospitals are limited by law to 25 inpatient beds. In every tier, matched critical access hospitals report far fewer employees than matched acute care hospitals, which is what correct matching should produce:
+## Match quality
+
+### Blind human review
+
+A stratified random sample of 150 matched pairs was reviewed by hand: 60 from tier A, 50 from tier B, 40 from tier C. The sample was shuffled and the reviewer saw only the two hospital names and the two addresses — not the tier, not the match scores. Decision rules were written down before the review began.
+
+| Tier | Crosswalk rows | Reviewed | Resolved | Cannot tell | Correct | Precision | 95% CI |
+|---|---|---|---|---|---|---|---|
+| A | 2,536 | 60 | 60 | 0 | 60 | 1.000 | 0.940–1.000 |
+| B | 539 | 50 | 50 | 0 | 47 | 0.940 | 0.838–0.979 |
+| C | 105 | 40 | 39 | 1 | 37 | 0.949 | 0.831–0.986 |
+| **A + B** | **3,075** | 110 | 110 | 0 | 107 | **0.989** | **0.978–1.000** |
+| All | 3,180 | 150 | 149 | 1 | 144 | 0.988 | 0.977–1.000 |
+
+Figures are weighted by tier size, because the sample is stratified by tier rather than drawn at random from the whole table. Results are in `derived/match-precision-hospital.csv`; the per-pair verdicts, with tier and scores but no hospital name, are in `derived/review-sample-labels-hospital.csv`.
+
+### The tiers mean something different here than in the nursing home crosswalk
+
+The same grading scheme was applied to both linkages. It separates good matches from bad ones in nursing homes and barely separates them in hospitals:
+
+| Tier | Nursing homes | Hospitals |
+|---|---|---|
+| A | 1.000 | 1.000 |
+| B | 0.915 | 0.940 |
+| C | **0.605** | **0.949** |
+
+Hospital names are distinctive; nursing home names are not. "Name ≥ 0.95 in the same city" is a weak rule when a metropolitan area holds several facilities called some variation of the same chain name, and a strong one when the candidate is a named hospital. The practical consequence differs by file: **exclude tier C from the nursing home crosswalk, but tier C can be kept here.**
+
+This also means tier is a poor quality signal for the hospital file. Use the match scores if a stricter subset is wanted.
+
+### What the review found about tier B
+
+The earlier, informal reading of 90 pairs described tier B as the weakest tier, because it matches on address and can link a hospital to a different facility on the same campus — a long-term acute care hospital operating inside a general hospital, for instance. The blind review supports that: tier B is the only tier with measured precision below the others on a like-for-like basis, and all three wrong matches found in it were of exactly that kind. The analysis below is still repeated on tier A alone.
+
+### Size agreement
+
+Critical access hospitals are limited by law to 25 inpatient beds. In every tier, matched critical access hospitals report far fewer employees than matched acute care hospitals, which is what correct matching should produce:
 
 | Tier | Acute care, median employees | Critical access, median employees |
 |---|---|---|
 | A | 1,059 (n = 1,688) | 196 (n = 567) |
 | B | 1,092 (n = 362) | 178 (n = 127) |
 | C | 1,091 (n = 59) | 186 (n = 34) |
-
-Reading 90 matched pairs by eye: tier A pairs are nearly all the same hospital under slightly different names; tier C pairs have matching names and differently written addresses. **Tier B is the weakest:** it matches on address, so a hospital may be matched to its parent system, or to a different facility on the same campus (for example, a long-term acute care hospital inside a general hospital). The analysis below is therefore repeated on tier A alone.
 
 ## Staff injury rates beside patient outcomes
 
@@ -57,7 +91,9 @@ The result is reported as found.
 
 ## What this data cannot show
 
-- Matching is by name and address. Tier C is excluded from the analysis above; tier B is included and tested separately.
+- Matching is by name and address. Precision is measured at 0.989 for tiers A and B (95% CI 0.978–1.000); recall is not estimated, which would require labelling a sample of unmatched OSHA establishments.
+- The review was carried out by one person, the author. A second independent reviewer would allow agreement between reviewers to be reported.
+- Tier C is excluded from the analysis above, a decision made before its precision was measured; the measured value (0.949) suggests it could be included.
 - A hospital system may report to OSHA as one establishment or as several. One-to-one assignment keeps only the best match for each.
 - The analysis compares establishments, not the same staff and patients in the same events. An association, or its absence, does not establish cause.
 - PSI measures are risk-adjusted by CMS; staff injury rates are not adjusted for anything.
@@ -70,6 +106,8 @@ The result is reported as found.
 | `hospital-crosswalk.ipynb` | Matching and analysis, with outputs |
 | `osha-cms-crosswalk-hospital-2025.csv` | The crosswalk: 3,180 pairs with tier and scores |
 | `derived/match-summary.csv`, `derived/match-quality-by-type.csv` | Match counts and the size check |
+| `derived/match-precision-hospital.csv` | Precision and 95% CI by tier from the blind review |
+| `derived/review-sample-labels-hospital.csv` | Per-pair verdicts with tier and scores; no hospital name |
 | `derived/staff-vs-patient-measures.csv`, `-tier-a.csv` | Correlations |
 | `derived/handling-rate-by-hacrp-penalty.csv`, `-tier-a.csv` | Rates by penalty status |
 | `derived/cms-source-files.csv` | CMS files used and their modification dates |

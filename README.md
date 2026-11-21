@@ -44,7 +44,7 @@ All source data is US Government work (17 U.S.C. §105). Every figure is reprodu
 | [`maude-transfer-devices/`](maude-transfer-devices/) | Patient harm reported with lifts, transfer devices, and stretchers | FDA MAUDE |
 | [`hospital-psi/`](hospital-psi/) | Hospital-acquired pressure injury and HACRP penalties, 3,056 hospitals | CMS |
 | [`crosswalk/`](crosswalk/) | Links 8,047 OSHA establishments to CMS-certified nursing homes, graded A–C, precision measured by blind review | OSHA, CMS |
-| [`hospital-crosswalk/`](hospital-crosswalk/) | Links 3,180 OSHA establishments to CMS hospitals; staff rates beside patient outcomes | OSHA, CMS |
+| [`hospital-crosswalk/`](hospital-crosswalk/) | Links 3,180 OSHA establishments to CMS hospitals, precision measured by blind review; staff rates beside patient outcomes | OSHA, CMS |
 | [`validation-oiics/`](validation-oiics/) | Out-of-sample test of the narrative rules against OSHA's own OIICS coding, 28,074 cases from 2024 | OSHA ITA |
 | [`evaluation-protocol/`](evaluation-protocol/) | Pre-specified protocol for measuring staff and patient outcomes before and after a change in how patients are moved | — |
 | [`usage-examples/`](usage-examples/) | Worked examples of joining the published files to CMS data | — |
@@ -59,7 +59,7 @@ Three files are built to be reused on their own. All are CSV, CC BY 4.0, and ide
 8,047 rows. Links OSHA establishments to CMS-certified nursing homes (CCN). Columns: `osha_establishment_id`, `cms_ccn`, `tier` (A/B/C), `name_score`, `addr_score`, `hno_match`, `zip_match`. A blind review of 150 pairs, stratified by tier, measures precision at 0.987 (95% CI 0.975–0.999) for tiers A and B, the recommended subset; the labels are published. Method and checks in [`crosswalk/`](crosswalk/).
 
 **OSHA–CMS hospital crosswalk** — [`hospital-crosswalk/osha-cms-crosswalk-hospital-2025.csv`](hospital-crosswalk/osha-cms-crosswalk-hospital-2025.csv)
-3,180 rows. Same structure, for CMS-certified hospitals. Method and checks in [`hospital-crosswalk/`](hospital-crosswalk/).
+3,180 rows. Same structure, for CMS-certified hospitals. A blind review of 150 pairs measures precision at 0.989 (95% CI 0.978–1.000) for tiers A and B. Method and checks in [`hospital-crosswalk/`](hospital-crosswalk/).
 
 **Facility-level injury rates** — [`injury-rates/derived/facility-rates-2025.csv`](injury-rates/derived/facility-rates-2025.csv)
 7,554 rows. Per-establishment employees, hours, case counts, handling and lateral-transfer counts, and rates per 100 full-time workers, with the CMS CCN and match tier where a crosswalk match exists.
