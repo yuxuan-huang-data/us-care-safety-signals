@@ -76,6 +76,16 @@ OSHA and CMS share no facility identifier, so any analysis connecting staff inju
 - **No establishment, product, or manufacturer is named.** Facilities are identified by OSHA establishment ID or CMS Certification Number and state only. A recorded injury, report, or penalty does not by itself establish fault.
 - **Data releases are recorded.** OSHA, CMS, and FDA republish their files. Each module states the release used and, where a module was re-run on a newer release, what changed.
 
+## Reproducibility and data vintage
+
+The notebooks resolve CMS download addresses at run time from CMS's own catalog, so re-running one fetches the file CMS is serving that day rather than a copy frozen here. That keeps the code working when CMS republishes, at a cost: a notebook re-run later reproduces the method exactly but not every figure to the last decimal.
+
+Two things move. OSHA republishes each year's establishment file as late submissions arrive. CMS revises published measure values after release, sometimes without changing the file's stated date.
+
+Each module records the source file dates it used, in `derived/`. A worked example of the size of the effect: the nursing home pressure-ulcer null result was Pearson r = 0.004 and Spearman ρ = 0.018 at the file dates recorded in `crosswalk/derived/match-summary.csv`; a later CMS release of the same measure gives r = 0.006 and ρ = 0.021 over the same 7,556 facilities.
+
+That is a reason not to read a conclusion off a significance threshold. In the hospital crosswalk, the association between staff handling-injury rate and PSI-08 moved from p = 0.0534 to p = 0.0287 across one CMS refresh while ρ changed by 0.007. The figures published here are the ones computed at the recorded file dates; the conclusions do not depend on which release is used.
+
 ## Environment
 
 Notebooks were run on Google Colab with Python 3.13.18. Package versions are pinned in [`requirements.txt`](requirements.txt):
@@ -86,13 +96,14 @@ The FDA module needs a free openFDA API key; see its README.
 
 ## Citation
 
-Huang, Y. (2026). *US Care Safety Signals: federal data analyses of caregiver injury and patient harm during patient handling and transfer* (Version 2.0.1) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.24408190
+Huang, Y. (2026). *US Care Safety Signals: federal data analyses of caregiver injury and patient harm during patient handling and transfer* (Version 2.1.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.24408190
 
 The DOI above always resolves to the latest version. Machine-readable metadata is in [`CITATION.cff`](CITATION.cff), which GitHub's "Cite this repository" button reads.
 
 ## License
 
 Code: MIT ([`LICENSE`](LICENSE)). Data and derived files: CC-BY-4.0 ([`LICENSE-data`](LICENSE-data)). Source data is US Government work and not subject to copyright.
+
 
 ## Narrative text and product names
 
