@@ -29,6 +29,15 @@ The two systems share no identifier. Anyone who wants to ask whether staff injur
 
 The table contains identifiers and scores only. Names and addresses remain in the source files.
 
+Two files in `derived/` record the blind review described below:
+
+| File | Contents |
+|---|---|
+| `match-precision.csv` | Precision and 95% confidence interval by tier, and size-weighted overall |
+| `review-sample-labels.csv` | One row per reviewed pair: tier, match scores, and the reviewer's verdict |
+
+Neither contains a facility name. Both can be checked against the published crosswalk.
+
 ## How matching works
 
 1. **Normalize.** Addresses: lower-case, remove punctuation and suite numbers, standardize street suffixes and directions, extract the house number. Names: remove legal suffixes and words that appear in nearly every facility name (nursing, rehabilitation, center, healthcare, and similar). ZIP: first five digits.
@@ -57,11 +66,13 @@ Sources: OSHA Form 300A summary data for 2025 (submissions through 2026-08-31); 
 | Share of OSHA establishments matched | 84.4% |
 | Share of CMS facilities matched | 54.8% |
 
-| Tier | Matches | Employees vs. certified beds (Spearman) | Median employees per bed |
-|---|---|---|---|
-| A | 6,654 | 0.579 | 1.09 |
-| B | 1,165 | 0.533 | 1.09 |
-| C | 228 | 0.428 | 1.02 |
+| Tier | Matches | Measured precision (95% CI) | Employees vs. certified beds (Spearman) | Median employees per bed |
+|---|---|---|---|---|
+| A | 6,654 | **1.000** (0.940–1.000) | 0.579 | 1.09 |
+| B | 1,165 | **0.915** (0.801–0.966) | 0.533 | 1.09 |
+| C | 228 | **0.605** (0.447–0.744) | 0.428 | 1.02 |
+| **A + B** | **7,819** | **0.987** (0.975–0.999) | | |
+| All | 8,047 | 0.976 (0.964–0.989) | | |
 
 Tiers A and B show similar size agreement, which indicates few wrong matches in tier B. Many tier B pairs carry entirely different names at the same street address, which is common where a facility's operating name differs from its licensed name or the operator has changed. Tier C agrees less well; reading its sample shows short or generic names (a single word matching within a longer name) that can coincide in the same ZIP code. Tier C should be excluded from analysis unless checked.
 
@@ -69,16 +80,42 @@ About half of CMS facilities are unmatched. Most of these are not failed matches
 
 ## How good the matches are
 
-There is no hand-labeled truth set for this linkage. The notebook reports two checks:
+### Blind human review
 
-- **Size agreement.** For correct matches, OSHA's employee count should rise with CMS's certified beds. The notebook reports the rank correlation and median employees per bed for each tier, written to `derived/match-quality-size-check.csv`. A tier with much weaker agreement contains more wrong matches.
-- **Reading a sample.** Ten random matches per tier are printed for inspection when the notebook runs. That printed output names facilities, so it is cleared from the published notebook; re-running the cell reproduces it.
+A stratified random sample of 150 matched pairs was reviewed by hand: 60 from tier A, 50 from tier B, 40 from tier C. The sample was shuffled and the reviewer saw only the two facility names and the two addresses — not the tier, not the match scores. The decision rules were written down before the review began. Each pair was marked same facility, not the same facility, or cannot tell; "cannot tell" pairs are reported and excluded from the denominator rather than forced to a guess.
+
+| Tier | Crosswalk rows | Reviewed | Resolved | Cannot tell | Correct | Precision | 95% CI |
+|---|---|---|---|---|---|---|---|
+| A | 6,654 | 60 | 60 | 0 | 60 | 1.000 | 0.940–1.000 |
+| B | 1,165 | 50 | 47 | 3 | 43 | 0.915 | 0.801–0.966 |
+| C | 228 | 40 | 38 | 2 | 23 | 0.605 | 0.447–0.744 |
+| **A + B** | **7,819** | 110 | 107 | 3 | 103 | **0.987** | **0.975–0.999** |
+| All | 8,047 | 150 | 145 | 5 | 126 | 0.976 | 0.964–0.989 |
+
+Because the sample is stratified by tier and not drawn at random from the whole table, the overall figures are weighted by tier size, not by the number of rows reviewed. Tier A contributes 83% of the table and was correct in every pair reviewed. All five unresolved pairs fell in tiers B and C.
+
+Tier C holds 2.8% of the rows and accounts for roughly half of the estimated wrong matches: about 90 of an estimated 193 across the whole table. Excluding it leaves 7,819 rows at an estimated precision of 0.987.
+
+Recall is not estimated. Doing so would require a labelled sample of OSHA establishments that were *not* matched, which is a separate exercise.
+
+### Size agreement
+
+For correct matches, OSHA's employee count should rise with CMS's certified beds. The rank correlation and median employees per bed for each tier are in `derived/match-quality-size-check.csv`.
+
+This check was built before any hand labels existed, and it ranked the tiers in the same order the review later found:
+
+| | Tier A | Tier B | Tier C |
+|---|---|---|---|
+| Employees vs. beds (Spearman) | 0.579 | 0.533 | 0.428 |
+| Measured precision | 1.000 | 0.915 | 0.605 |
+
+The recommendation to exclude tier C was made on the size check alone. The blind review confirms it. For other linkage projects with no truth set, that agreement is itself a result: an external expectation about a linked variable ranked the tiers correctly without any labels.
 
 Match counts by tier and the source file dates are in `derived/match-summary.csv`.
 
 ## Recommended use
 
-- Use tiers **A and B** for analysis. Report results with tier C included and excluded if it changes a conclusion.
+- Use tiers **A and B** for analysis: 7,819 rows, measured precision 0.987 (95% CI 0.975–0.999). Tier C's measured precision is 0.605; include it only if a sensitivity analysis shows it does not change a conclusion.
 - Keep `cms_ccn` as text; CCNs can begin with zero.
 - An unmatched CMS facility usually means the facility was not required to submit to OSHA, not that matching failed. OSHA submission depends on establishment size.
 
@@ -104,7 +141,9 @@ OSHA republishes each year's files as late submissions arrive, and removes the e
 
 ## Limitations
 
-- Match quality is assessed indirectly. Tier C is probable, not confirmed.
+- Precision is measured; recall is not. Estimating recall would require labelling a sample of unmatched OSHA establishments.
+- The review was carried out by one person, the author. A second independent reviewer would allow agreement between reviewers to be reported.
+- Tier C is measured at 0.605 precision and should be excluded unless checked.
 - Facilities renamed or sold between the OSHA submission and the CMS file date may be graded B or missed.
 - Multi-building campuses may correspond to more than one record on either side; one-to-one assignment keeps only the best pair.
 - The crosswalk reflects the file versions recorded in `derived/match-summary.csv`. CMS updates monthly; OSHA republishes as late submissions arrive.

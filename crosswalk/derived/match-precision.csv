@@ -1,0 +1,6 @@
+tier,crosswalk rows,reviewed,resolved,cannot tell,correct,precision,ci95_low,ci95_high
+A,6654,60,60,0,60,1.0,0.94,1.0
+B,1165,50,47,3,43,0.915,0.801,0.966
+C,228,40,38,2,23,0.605,0.447,0.744
+A+B (recommended),7819,110,107,3,103,0.987,0.975,0.999
+ALL (size-weighted),8047,150,145,5,126,0.976,0.964,0.989
